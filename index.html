@@ -11,13 +11,27 @@
 
     </h1>
     <script>
-        fetch('http://www.boredapi.com/api/activity/')
+        //without function
+        // fetch('http://www.boredapi.com/api/activity/')
+        // .then(respons=>respons.json())
+        // .then(data=>{
+        //     document.getElementById('activity').innerText=data.activity;
+        //     //data er vethor er ekti element activity
+        // })
+
+        function doSomething(){
+            fetch('http://www.boredapi.com/api/activity/')
         .then(respons=>respons.json())
         .then(data=>{
             document.getElementById('activity').innerText=data.activity;
             //data er vethor er ekti element activity
         })
-        
+        }
+        doSomething()
+        setInterval(()=>{
+            doSomething();
+
+        },1000);
     </script>
 
 
